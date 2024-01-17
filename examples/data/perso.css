@@ -1,0 +1,202 @@
+.always-visible {
+    display: inline-block; /* Assurez-vous que le logo et le titre sont affichés en ligne */
+    margin-left: 10px; /* Ajoutez une marge à gauche pour espacer le logo du titre */
+}
+
+.pump-status {
+    /*padding: 10px;*/
+    /*margin: 10px;*/
+    border: 1px solid #ddd;
+    background-color: #333; /* Fond noir ou autre couleur du thème OpenSpa */
+    text-align: center;
+    height: 100%; /* Remplir tout l'espace disponible en hauteur */
+    line-height: 50px; /* Ajustez à la même hauteur que la hauteur fixe */
+    padding-bottom:10px;
+    width: 100%; /* Ajustez la largeur pour s'adapter à l'écran */
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur totale */
+    margin: 0; /* Supprimez la marge pour utiliser l'espace disponible */
+}
+
+.pilotage{
+    min-height:220px;
+}
+
+.pump-status h3 {
+    background-color: #4CAF50; /* Couleur verte ou autre couleur du thème OpenSpa */
+    color: white;
+    padding: 5px; /* Ajout de marge intérieure pour le texte du titre */
+    border-radius: 5px; /* Coins arrondis pour le titre */
+    height: 100%; /* Remplir tout l'espace disponible en hauteur */
+    line-height: 50px; /* Ajustez à la même hauteur que la hauteur fixe */
+    margin: 0; /* Supprime tout espace entre le bord et le fond */
+}
+
+/* Centrer le texte de l'état des pompes */
+.pump-status p {
+    text-align: center;
+    margin-top: 10px; /* Ajouter un espace supplémentaire en haut */
+    color: white;
+}
+
+#openspa-logo {
+    fill: #008000;
+    height: 2em;
+    width: 2em;
+    margin-right: 10px; /* Ajouter une marge à droite du logo */
+}
+
+.always-visible {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.logo-and-title {
+    display: flex;
+    align-items: center;
+}
+
+.w3-navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.w3-navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    /*padding: 14px 16px;*/
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.w3-navbar a.icon {
+    float: right;
+    display: block;
+
+}
+
+.w3-navbar a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.w3-navbar a.select{
+    color: #000!important;
+    background-color: #ccc!important;
+}
+
+button {
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    font-size: 16px; /* Taille de la police du bouton */
+    border: none; /* Supprimez la bordure du bouton */
+    border-radius: 5px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Curseur pointeur au survol du bouton */
+}
+
+button:hover {
+    background-color: #45a049; /* Couleur de fond au survol du bouton */
+}
+
+@media screen and (max-width: 600px) {
+    .w3-navbar a {
+        float: none;
+        display: none;
+        text-align: left;
+    }
+
+    .w3-navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .always-visible {
+        display: inline-block;
+        margin-left: 0;
+    }
+
+    #openspa-logo {
+        margin-right: 0;
+    }
+
+    .w3-navbar {
+        text-align: center;
+    }
+
+    .w3-navbar a.hide-mobile {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .w3-navbar a.icon {
+        float: right;
+        display: block;
+        margin-right: 10px;
+        margin-top : -50px;
+    }
+
+    .w3-navbar h1 {
+        display: inline-block;
+        margin: 0;
+        font-size: 1.5em;
+        padding-left : 20px;
+    }
+    .always-visible {
+        display: block;
+        margin-left: 0;
+    }
+
+    .w3-navbar a.icon {
+        float: right;
+        display: block;
+    }
+
+    .w3-navbar.responsive .always-visible {
+        display: inline-block;
+    }
+
+    .w3-navbar.responsive .w3-navbar-links {
+        display: block;
+        text-align: center;
+    }
+
+    .w3-navbar-links a {
+        display: block;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .responsive {
+        display: none;
+    }
+}
+    /* Nouveau style pour toujours afficher le menu en mode desktop */
+@media screen and (min-width: 601px) {
+    .w3-navbar a.icon {
+        display: none;
+    }
+
+    .w3-navbar .always-visible {
+        display: inline-block;
+    }
+
+    .w3-navbar .w3-navbar-links {
+        display: block;
+    }
+
+    .w3-navbar-links a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 30px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        align-items: center;
+    }
+}

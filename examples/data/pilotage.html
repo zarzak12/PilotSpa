@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSpa</title>
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="perso.css">
+  <link rel="icon" href="favicon.ico" />
+  <meta http-equiv="refresh" content="30">
+</head>
+<body style="background-color: #1e1e1e; color: white; margin: 0;">
+
+<!-- Barre de navigation en haut -->
+<div class="w3-navbar">
+  <a href="#" class="w3-bar-item w3-button hide-mobile">
+    <div class="logo-and-title">
+      <i id="openspa-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.188 363.188"
+         xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 363.188 363.188"
+         style="">
+        <svg fill="#008000" height="2em" width="2em" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 363.188 363.188" xmlns:xlink="http://www.w3.org/1999/xlink"
+             enable-background="new 0 0 363.188 363.188" style="">
+          <g>
+            <path d="m111.667,132.311c-61.574,0-111.667,50.093-111.667,111.666s50.093,111.667 111.667,111.667 111.667-50.094 111.667-111.667-50.094-111.666-111.667-111.666zm0,208.333c-53.303,0-96.667-43.364-96.667-96.667 0-53.302 43.364-96.666 96.667-96.666s96.667,43.364 96.667,96.666c-0.001,53.303-43.365,96.667-96.667,96.667z"/>
+            <path d="m111.667,173.977c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5 7.5,7.5c30.327,0 55,24.673 55,55 0,4.143 3.358,7.5 7.5,7.5s7.5-3.357 7.5-7.5c0-38.598-31.402-70-70-70z"/>
+            <path d="m298.333,69.835c-35.761,0-64.855,29.094-64.855,64.855 0,35.761 29.094,64.854 64.855,64.854s64.855-29.094 64.855-64.854c-5.68434e-14-35.761-29.093-64.855-64.855-64.855zm0,114.71c-27.49,0-49.855-22.364-49.855-49.854s22.365-49.855 49.855-49.855 49.855,22.365 49.855,49.855-22.364,49.854-49.855,49.854z"/>
+            <path d="m302.012,157.925c-14.84,0-26.913-12.073-26.913-26.913 0-4.143-3.358-7.5-7.5-7.5s-7.5,3.357-7.5,7.5c0,23.111 18.802,41.913 41.913,41.913 4.142,0 7.5-3.357 7.5-7.5s-3.358-7.5-7.5-7.5z"/>
+            <path d="m123.358,96.568c24.544,0 44.512-19.968 44.512-44.512s-19.968-44.512-44.512-44.512-44.512,19.968-44.512,44.512 19.968,44.512 44.512,44.512zm0-74.024c16.273,3.55271e-15 29.512,13.239 29.512,29.512s-13.239,29.512-29.512,29.512-29.512-13.239-29.512-29.512 13.239-29.512 29.512-29.512z"/>
+          </g>
+        </svg>
+      </i>
+      <h1 class="always-visible">OpenSpa</h1>
+    </div>
+  </a>
+  <a href="#" class="w3-bar-item w3-button icon hide-desktop" onclick="toggleNavbar()">&#9776;</a>
+  <div class="w3-navbar-links hide-mobile responsive">
+    <a href="/" class="w3-bar-item w3-button">Accueil</a>
+    <a href="/pilotage" class="w3-bar-item w3-button select">Pilotage</a>
+    <a href="/update" class="w3-bar-item w3-button">Paramètres</a>
+  </div>
+</div>
+<!-- Contenu principal -->
+<div class="w3-main" style="margin-top: 43px;">
+
+  <div class="w3-container">
+    <!-- Contenu principal ici -->
+  </div>
+  <div id="live-data-container" class="w3-container">
+    <h2>Données en Direct</h2>
+    <h3 class="">$datetime</h3>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Mode</h3>
+        <p>$mode</p>
+        <button onclick="togglePump('mode')">Activer/ Désactiver</button>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Temp. Paramétré</h3>
+        <p>$tempParam °C</p>
+        <label for="setTemperature">Choisir la Température :</label>
+        <input type="number" id="setTemperature" name="setTemperature" min="26" max="40" step="0.5">
+        <button onclick="setTemperature()">Envoyer</button>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Temp. affiché</h3>
+        <p>$tempReel °C</p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Blower</h3>
+        <p>$blower</p>
+        <button onclick="togglePump('blower')">Activer/ Désactiver</button>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Pompe filtration</h3>
+        <p>$pump1</p>
+        <button onclick="togglePump('pump1')">Activer/ Désactiver</button>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Pompes Massage</h3>
+        <p>$pump2</p>
+        <button onclick="togglePump('pump2')">Activer/ Désactiver</button>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third">
+      <div class="pump-status w3-round w3-margin-top pilotage">
+        <h3>Lumières</h3>
+        <p>$light</p>
+        <button onclick="togglePump('light')">Activer/ Désactiver</button>
+      </div>
+    </div>
+    <!-- Ajoutez d'autres zones de statut des pompes selon vos besoins -->
+  </div>
+
+</div>
+<!-- Script pour activer le menu réactif sur les petits écrans -->
+<script>
+        function toggleNavbar() {
+            var x = document.querySelector(".w3-navbar-links");
+            if (x.className.indexOf("responsive") == -1) {
+                x.className += " responsive";
+            } else {
+                x.className = x.className.replace(" responsive", "");
+            }
+        };
+        function togglePump(pumpId) {
+          // Effectuer une requête POST pour contrôler la pompe sur le serveur
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/controler-pompe", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              // La réponse du serveur (si nécessaire) peut être traitée ici
+              console.log("Contrôle de la pompe avec succès !");
+            }else
+            {
+              console.log("Erreur de communication");
+            }
+          };
+          // Envoyer le nom de la pompe  en tant que données du formulaire
+          xhr.send("pompe=" + pumpId);
+        };
+        function setTemperature() {
+        // Récupérer la température saisie par l'utilisateur
+        var tempParametree = document.getElementById("setTemperature").value;
+
+        // Effectuer une requête POST pour envoyer la température au serveur
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/parametrer-temperature", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            // La réponse du serveur (si nécessaire) peut être traitée ici
+            console.log("Température paramétrée avec succès !");
+          }
+        };
+        // Envoyer la température en tant que données du formulaire
+        xhr.send("tempParametree=" + tempParametree);
+      }
+    </script>
+</body>
+</html>
