@@ -30,7 +30,7 @@
 - One total cycle duration 3.54 ms
 - Bit duration for display data is 23.75 microseconds for display data <br />
 - Bit duration for button data is 71.5 microseconds <br />
-- 
+
 #### Display Data
 
 Display shows **29.5C** - How does that translates into the bitstream? The first 4 chunks is coded in BCD to 7 segment LCD (see reference) but only with 7 bits sinse the LSB always is (0). <br />
