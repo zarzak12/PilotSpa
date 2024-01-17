@@ -138,3 +138,11 @@ A timing mechanism (Ticker) is used to periodically check the Wi-Fi connection.
 
 - Wi-Fi Reconnection Function:</br>
 In case of Wi-Fi connection loss, the code attempts to reconnect.
+
+## First installation
+- upload SPIFF in ESP32
+- upload code generation in ESP32
+- connect your wifi devices to the OpenSpa-config wifi with the password openspa2801
+- call the IP address of OpenSpa-config (ex: http://192.168.4.1)
+- set all information on settings page
+- call the new IP address connected to your local network (ex: http://192.168.1.33)
