@@ -57,7 +57,7 @@ C = 1001110(0) = (Chunk 4) <br />
 
 <img src="https://github.com/MagnusPer/Balboa-GS510SZ/blob/main/extras/docs/Balboa_GS_Interface.jpg" width="1000">
 
-For the raccordement I choose an ESP 32 and I connect
+For the raccordement I choose an ESP 32 and I connect :
 
 Clock pin : 23</br>
 Read pin  : 22</br>
