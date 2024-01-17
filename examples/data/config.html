@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSpa - Configuration Wi-Fi</title>
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="perso.css">
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      margin: 0;
+    }
+
+    .w3-main {
+      margin-top: 43px;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <meta http-equiv="refresh" content="30">
+</head>
+<body>
+
+<!-- Barre de navigation en haut -->
+<div class="w3-navbar">
+  <a href="#" class="w3-bar-item w3-button hide-mobile">
+    <div class="logo-and-title">
+      <i id="openspa-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.188 363.188"
+         xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 363.188 363.188">
+        <svg fill="#008000" height="2em" width="2em" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 363.188 363.188" xmlns:xlink="http://www.w3.org/1999/xlink"
+             enable-background="new 0 0 363.188 363.188">
+          <!-- Le reste du code SVG -->
+        </svg>
+      </i>
+      <h1 class="always-visible">PilotSpa</h1>
+    </div>
+  </a>
+  <a href="#" class="w3-bar-item w3-button icon hide-desktop" onclick="toggleNavbar()">&#9776;</a>
+  <div class="w3-navbar-links hide-mobile responsive">
+    <a href="/" class="w3-bar-item w3-button select">Accueil</a>
+    <a href="/pilotage" class="w3-bar-item w3-button">Pilotage</a>
+    <a href="/update" class="w3-bar-item w3-button">Paramètres</a>
+  </div>
+</div>
+<!-- Contenu principal -->
+<div class="w3-main">
+  <h2>Configuration Wi-Fi</h2>
+  <form action="/save-config" method="post">
+    <label for="ssid">SSID:</label>
+    <input type="text" id="ssid" name="ssid" value="$ssid" required>
+
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password" value="$password" required>
+
+    <label for="ip">Adresse IP MQTT:</label>
+    <input type="text" id="ip" name="ip" value="$ip" required><br>
+
+    <label for="mqttUsername">Identifiant MQTT:</label>
+    <input type="text" id="mqttUsername" name="mqttUsername" value="$mqttUsername" required><br>
+
+    <label for="mqttPassword">Mot de passe MQTT:</label>
+    <input type="password" id="mqttPassword" name="mqttPassword" value="$mqttPassword" required><br>
+
+    <label for="adminUsername">Identifiant Admin:</label>
+    <input type="text" id="adminUsername" name="adminUsername" value="$adminUsername" required><br>
+
+    <label for="adminPassword">Mot de passe Admin:</label>
+    <input type="password" id="adminPassword" name="adminPassword" value="$adminPassword" required><br>
+
+    <input type="submit" value="Enregistrer la configuration">
+  </form>
+</div>
+<!-- Script pour activer le menu réactif sur les petits écrans -->
+<script>
+  function toggleNavbar() {
+    var x = document.querySelector(".w3-navbar-links");
+    if (x.className.indexOf("responsive") == -1) {
+      x.className += " responsive";
+    } else {
+      x.className = x.className.replace(" responsive", "");
+    }
+  }
+</script>
+</body>
+</html>
