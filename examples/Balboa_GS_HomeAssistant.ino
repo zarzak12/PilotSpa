@@ -83,6 +83,8 @@ HABinarySensor filtration("Filtration");
 HABinarySensor filter1("Filter1");
 HABinarySensor filter2("Filter2");
 
+HABinarySensor button("Button");
+
 HASensor ipAdd("IpAddress");
 HABinarySensor wifiConn("WifiConn");
 HASensor rssiWifi("RSSIWifi");
@@ -403,6 +405,8 @@ void setup_HA() {
   filter1.setName("Filter 1");
   filter2.setName("Filter 2");
 
+  button.setName("Button spa");
+
   tempUpButton.setName("Temp Up");
   tempUpButton.onCommand(onButtonPress);
 
@@ -678,8 +682,6 @@ void loop() {
   mqtt.loop();
   ElegantOTA.loop();
 
-  if (WiFi.status() == WL_CONNECTION_LOST) { setup_wifi(); }  // Check WiFi connnection reconnect otherwise
-
   if (millis() - ReportTimerPrevMillis > ReportTimerMillis) {
 
     ReportTimerPrevMillis = millis();
@@ -698,6 +700,8 @@ void loop() {
     filtration.setState(Balboa.displayFiltration);
     filter1.setState(Balboa.displayFilter1);
     filter2.setState(Balboa.displayFilter2);
+
+    button.setState(Balboa.displayButton);
 
     //Serial.println(WiFi.localIP());
     //Serial.println(WiFi.RSSI());
