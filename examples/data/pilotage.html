@@ -30,7 +30,7 @@
           </g>
         </svg>
       </i>
-      <h1 class="always-visible">OpenSpa</h1>
+      <h1 class="always-visible">PilotSpa</h1>
     </div>
   </a>
   <a href="#" class="w3-bar-item w3-button icon hide-desktop" onclick="toggleNavbar()">&#9776;</a>
@@ -55,7 +55,9 @@
       <div class="pump-status w3-round w3-margin-top pilotage">
         <h3>Mode</h3>
         <p>$mode</p>
-        <button onclick="togglePump('mode')">Activer/ Désactiver</button>
+        <button onclick="togglePump('Standard')" class="mode-standard">Standard</button>
+        <button onclick="togglePump('Economie')">Économie</button>
+        <button onclick="togglePump('Sleep')"class="mode-sleep">Sleep</button>
       </div>
     </div>
     <div class="w3-third">
@@ -138,22 +140,26 @@
           xhr.send("pompe=" + pumpId);
         };
         function setTemperature() {
-        // Récupérer la température saisie par l'utilisateur
-        var tempParametree = document.getElementById("setTemperature").value;
+          // Récupérer la température saisie par l'utilisateur
+          var tempParametree = document.getElementById("setTemperature").value;
 
-        // Effectuer une requête POST pour envoyer la température au serveur
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/parametrer-temperature", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            // La réponse du serveur (si nécessaire) peut être traitée ici
-            console.log("Température paramétrée avec succès !");
-          }
+          // Effectuer une requête POST pour envoyer la température au serveur
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/parametrer-temperature", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              // La réponse du serveur (si nécessaire) peut être traitée ici
+              console.log("Température paramétrée avec succès !");
+            }
+            else
+            {
+              console.log("Erreur de communication");
+            }
+          };
+          // Envoyer la température en tant que données du formulaire
+          xhr.send("tempParametree=" + tempParametree);
         };
-        // Envoyer la température en tant que données du formulaire
-        xhr.send("tempParametree=" + tempParametree);
-      }
     </script>
 </body>
 </html>
