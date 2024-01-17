@@ -84,17 +84,6 @@ Write Pin : 13</br>
 
 Gerber files located here: [PCB Balboa-GS510SZ](https://github.com/Shuraxxx/-Balboa-GS523SZ-with-panel-VL801D-DeluxeSerie-/tree/main/extras/PCB%20layout )
 
-## References of great help!
-- https://github.com/Shuraxxx/-Balboa-GS523SZ-with-panel-VL801D-DeluxeSerie--MQTT
-- https://github.com/NickB1/OpenSpa/blob/master/documents/Balboa/Balboa_Display_Measurements.pdf
-- https://www.olivierhill.ca/archives/72-The-Internet-of-Spas.html
-- https://create.arduino.cc/projecthub/meljr/7-segment-led-displays-102-using-a-shift-register-6b6976
-
-## Other Balboa projects 
-- GL2000 Series https://github.com/netmindz/balboa_GL_ML_spa_control
-- BP Series https://github.com/ccutrer/balboa_worldwide_app
-- https://github.com/MagnusPer/Balboa-GS510SZ/
-
 ## Synthèse
 
 This project appears to be an application to control a Balboa spa system using an ESP32, with a web user interface and MQTT integration. Here's a summary of the main features of your code:
@@ -146,3 +135,15 @@ In case of Wi-Fi connection loss, the code attempts to reconnect.
 - call the IP address of OpenSpa-config (ex: http://192.168.4.1)
 - set all information on settings page
 - call the new IP address connected to your local network (ex: http://192.168.1.33)
+
+## References of great help!
+- https://github.com/Shuraxxx/-Balboa-GS523SZ-with-panel-VL801D-DeluxeSerie--MQTT
+- https://docs.google.com/document/u/0/d/1xuc5N6-Q7J7bQxBARYjUywhqkIFjOnh8vAHqEya5QAI/mobilebasic
+- https://github.com/NickB1/OpenSpa/blob/master/documents/Balboa/Balboa_Display_Measurements.pdf
+- https://www.olivierhill.ca/archives/72-The-Internet-of-Spas.html
+- https://create.arduino.cc/projecthub/meljr/7-segment-led-displays-102-using-a-shift-register-6b6976
+
+## Other Balboa projects 
+- GL2000 Series https://github.com/netmindz/balboa_GL_ML_spa_control
+- BP Series https://github.com/ccutrer/balboa_worldwide_app
+- https://github.com/MagnusPer/Balboa-GS510SZ/
