@@ -59,9 +59,9 @@ C = 1001110(0) = (Chunk 4) <br />
 
 For the raccordement I choose an ESP 32 and I connect
 
-Clock pin : 23
-Read pin  : 22
-Write Pin : 13
+Clock pin : 23</br>
+Read pin  : 22</br>
+Write Pin : 13</br>
 
 #### Button data
 
