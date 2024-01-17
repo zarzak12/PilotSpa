@@ -93,42 +93,42 @@ Gerber files located here: [PCB Balboa-GS510SZ](https://github.com/Shuraxxx/-Bal
 
 This project appears to be an application to control a Balboa spa system using an ESP32, with a web user interface and MQTT integration. Here's a summary of the main features of your code:
 
-- Wi-Fi Connection:
+- Wi-Fi Connection:</br>
 The code handles Wi-Fi connection at startup.
 If Wi-Fi connection fails, the code switches to SoftAP mode to allow for configuration.
 A web server is configured for Wi-Fi configuration management.
 
-- EEPROM:
+- EEPROM:</br>
 Configuration information such as SSID, password, etc., is stored in EEPROM.
 
 - Web Server:
 A web server is configured with HTML pages to display the spa's status and allow configuration.
 Custom CSS files are also served.
 
-- MQTT:
+- MQTT:</br>
 The code connects to an MQTT broker with configuration information.
 Spa status data is published via MQTT.
 
-- OTA (Over-The-Air):
+- OTA (Over-The-Air):</br>
 The code supports Over-The-Air updates, allowing wireless firmware updates.
 
-- Balboa Interface:
+- Balboa Interface:</br>
 The code uses a Balboa interface to interact with the spa system.
 Commands are sent to the Balboa system based on user actions.
 
-- Home Assistant Integration:
+- Home Assistant Integration:</br>
 Spa data is exposed as sensors, switches, etc., for integration with Home Assistant.
 Virtual buttons on the user interface trigger commands on the Balboa system.
 
-- Timestamping:
+- Timestamping:</br>
 The ESP32 is configured to use NTP time for timestamping.
 
-- Debugging:
+- Debugging:</br>
 Debug information is displayed on the serial port.
 A specific configuration page is protected with a username and password.
 
-- Timing Mechanism (Ticker):
+- Timing Mechanism (Ticker):</br>
 A timing mechanism (Ticker) is used to periodically check the Wi-Fi connection.
 
-- Wi-Fi Reconnection Function:
+- Wi-Fi Reconnection Function:</br>
 In case of Wi-Fi connection loss, the code attempts to reconnect.
